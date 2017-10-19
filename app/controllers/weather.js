@@ -12,3 +12,8 @@ module.exports = function (app) {
 router.get('/', function (req, res, next) {
 
 });
+
+router.get('/:zipcode', function (req, res, next) {
+  let weather = new WeatherAPI(apikey);
+  wheather.getWeather({
+    location: req.Param('zipcode') +',us'
